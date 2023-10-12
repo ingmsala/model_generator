@@ -1,3 +1,5 @@
+'use client'
+
 const { create } = require('zustand')
 
 export const useSettingsStore = create(set => {
