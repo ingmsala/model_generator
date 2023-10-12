@@ -1,7 +1,7 @@
 const { create } = require('zustand')
 
 export const useSettingsStore = create(set => {
-  const settingsStorage = localStorage.getItem('settings')
+  const settingsStorage = window !== 'undefined' ? localStorage.getItem('settings') : null
   const initialSettings = settingsStorage
     ? JSON.parse(settingsStorage)
     : {
