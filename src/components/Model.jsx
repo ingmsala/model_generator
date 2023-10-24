@@ -5,8 +5,9 @@ export default function Model ({ info }) {
   const [color, setColor] = useState('bg-gray-200 text-gray-800 hover:bg-gray-300')
 
   const copyCode = () => {
+    const textWithoutBreaks = info.replace(/(\r\n|\n|\r)/gm, '')
     navigator.clipboard
-      .writeText(info)
+      .writeText(textWithoutBreaks)
       .then(() => {
         toast.success('Copied!')
         setColor('bg-emerald-500 text-white hover:bg-emerald-600')
